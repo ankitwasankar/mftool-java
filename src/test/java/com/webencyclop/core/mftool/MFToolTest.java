@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 class MFToolTest {
@@ -39,5 +42,19 @@ class MFToolTest {
         List<Data> list = tool.historicNavForScheme("120503");
         System.out.println(list.size());
         Assertions.assertTrue(list.size() > 2098); // 2098 days old minimum
+    }
+
+    @Test
+    void testGetCurrentNav() throws IOException {
+        MFTool tool = new MFTool();
+        BigDecimal nav = tool.getCurrentNav("120503");
+        Assertions.assertNotNull(nav);
+    }
+
+    @Test
+    void testGetNavFor() throws IOException {
+        MFTool tool = new MFTool();
+        BigDecimal nav = tool.getNavFor("120503", LocalDate.parse("2021-07-13"));
+        Assertions.assertNotNull(nav);
     }
 }

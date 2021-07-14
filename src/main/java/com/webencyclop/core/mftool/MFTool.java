@@ -10,6 +10,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -58,6 +60,24 @@ public class MFTool {
         return schemeNavMap.get(code);
     }
 
+    public BigDecimal getCurrentNav(String code) throws IOException {
+        if (!schemeDetailMap.containsKey(code)) {
+            updateSchemeDetails(code);
+        }
+        return schemeNavMap.get(code).get(0).getNav();
+    }
+
+    public BigDecimal getNavFor(String code, LocalDate date) throws IOException {
+        if (!schemeDetailMap.containsKey(code)) {
+            updateSchemeDetails(code);
+        }
+        return schemeNavMap.get(code)
+                .stream()
+                .filter(data -> compareDate(date, data.getDate()))
+                .collect(Collectors.toList())
+                .get(0).getNav();
+    }
+
     private void updateSchemeDetails(String code) throws IOException {
         var request = new Request.Builder()
                 .url(BASE_URL + "/mf/" + code)
@@ -78,5 +98,14 @@ public class MFTool {
         schemeNameCodePairList.addAll(list.stream().map(o -> o.map(o)).collect(Collectors.toList()));
     }
 
+    private boolean compareDate(LocalDate date1, LocalDate date2) {
+        if (date1.getYear() != date2.getYear()) {
+            return false;
+        }
+        if (date1.getMonth() != date2.getMonth()) {
+            return false;
+        }
+        return date1.getDayOfMonth() == date2.getDayOfMonth();
+    }
 
 }

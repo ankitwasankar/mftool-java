@@ -11,7 +11,11 @@ It can be used in various types of projects which requires getting live quotes f
 
 ### Features
 - Fetch list of all the mutual fund schemes with their scheme-codes.
-- Match string with names of mutual fund list. (useful in auto-suggestion in searches)
+- Match keyword with names of mutual fund list. (useful in auto-suggestion in searches).
+- Fetch historic NAV for the fund.
+- Fetch current NAV.
+- Fetch NAV for specific date.
+- Fetch Fund Details for fund.
 - Returns data in Java Objects.
 
 ### How to use
@@ -31,4 +35,13 @@ SchemeDetails details = tool.schemeDetails("120503");
 // Returns hisoric NAV data - Axis fund: 120503
 MFTool tool = new MFTool();
 List<Data> list = tool.historicNavForScheme("120503");
+
+// Returns current NAV for mutual fund
+MFTool tool = new MFTool();
+BigDecimal nav = tool.getCurrentNav("120503");
+
+// Returns NAV for specific date
+MFTool tool = new MFTool();
+BigDecimal nav = tool.getNavFor("120503", LocalDate.parse("2021-07-13"));
 ```
+
