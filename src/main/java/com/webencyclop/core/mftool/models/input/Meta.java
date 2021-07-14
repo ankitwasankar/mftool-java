@@ -1,13 +1,20 @@
 package com.webencyclop.core.mftool.models.input;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Meta {
 
+    @JsonProperty("fund_house")
     private String fundHouse;
+    @JsonProperty("scheme_type")
     private String schemeType;
+    @JsonProperty("scheme_category")
     private String schemeCategory;
+    @JsonProperty("scheme_code")
     private String schemeCode;
+    @JsonProperty("scheme_name")
     private String schemeName;
 
     public String getFundHouse() {

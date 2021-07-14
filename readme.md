@@ -18,10 +18,17 @@ It can be used in various types of projects which requires getting live quotes f
 ```
 // Return the List of mutual funds which matches keyword "Axis"
 MFTool mfTool = new MFTool();
-List<SchemeNameCodePair> list = mfTool.matchingSchemeName("Axis");
-
+List<SchemeNameCodePair> list = mfTool.matchingScheme("Axis");
 
 // Retuns List of all the mutual fund list in India
 MFTool tool = new MFTool();
 List<SchemeNameCodePair> list = tool.allSchemes();
+
+// Retuns the Mutual Fund details - Axis fund: 120503
+MFTool tool = new MFTool();
+SchemeDetails details = tool.schemeDetails("120503");
+
+// Returns hisoric NAV data - Axis fund: 120503
+MFTool tool = new MFTool();
+List<Data> list = tool.historicNavForScheme("120503");
 ```
