@@ -6,6 +6,6 @@ os:
   - linux
 
 script:
-  - mvn test jacoco:report
+  - mvn cobertura:cobertura
 after_success:
-  - mvn  coveralls:report
+  - mvn clean cobertura:cobertura coveralls:report
