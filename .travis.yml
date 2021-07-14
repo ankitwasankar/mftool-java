@@ -1,4 +1,11 @@
 language: java
-sudo: false
+jdk:
+  - oraclejdk8
+dist: trusty
+os:
+  - linux
+
 script:
-  - mvn clean verify
+  - mvn test jacoco:report
+after_success:
+  - mvn  coveralls:report
