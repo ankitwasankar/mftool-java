@@ -7,6 +7,7 @@
 mftool-java is a library for getting Mutual Funds data in India in Java applications. 
 It can be used in various types of projects which requires getting live quotes for a given scheme.
 
+###### Note: This library requires internet connection to fetch Mutual Fund data.
 
 ### Features
 - Fetch list of all the mutual fund schemes with their scheme-codes.
