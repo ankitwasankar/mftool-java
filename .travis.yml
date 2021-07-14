@@ -1,4 +1,4 @@
 language: java
 sudo: false
 script:
-  - mvn clean verify -Dgpg.skip=true
+  - mvn clean verify -Dgpg.skip
