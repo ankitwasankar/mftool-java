@@ -1,11 +1,5 @@
 language: java
-jdk:
-  - oraclejdk11
-dist: trusty
-os:
-  - linux
-
+sudo: false
 script:
-  - mvn cobertura:cobertura
-after_success:
-  - mvn clean cobertura:cobertura coveralls:report
+  - mvn clean install
+  - mvn clean verify
