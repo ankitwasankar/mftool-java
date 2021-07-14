@@ -40,14 +40,6 @@
                     <target>11</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.3.0</version>
-                <configuration>
-                    <repoToken>jZieYgw2DjFjdJ7T07dvsGW05jngITraB</repoToken>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
