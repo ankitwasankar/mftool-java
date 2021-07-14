@@ -15,4 +15,12 @@ class MFToolTest {
         List<SchemeNameCodePair> list = tool.matchingSchemeName("Axis");
         Assertions.assertNotNull(list);
     }
+
+    @Test
+    void testAllSchemes() throws IOException {
+        MFTool tool = new MFTool();
+        List<SchemeNameCodePair> list = tool.allSchemes();
+        Assertions.assertNotNull(list);
+        Assertions.assertTrue(list.size() > 40_000);
+    }
 }
