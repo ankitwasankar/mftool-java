@@ -6,7 +6,7 @@
 
     <groupId>com.webencyclop.core</groupId>
     <artifactId>mftool-java</artifactId>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <name>MFTool-Java Library</name>
     <description>Library for for Mutual Fund realtime and historic data</description>
     <url>https://github.com/ankitwasankar/mftool-java</url>
