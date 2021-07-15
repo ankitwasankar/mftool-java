@@ -22,7 +22,7 @@ It can be used in various types of projects which requires getting live quotes f
 - Returns data in Java Objects.
 
 # Documentation
-###### Add dependency from Maven Central https://search.maven.org/artifact/com.webencyclop.core/mftool-java/0.1.1/jar
+###### Add dependency from Maven Central https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
 #####Maven
 ```
