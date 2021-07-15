@@ -24,7 +24,7 @@ It can be used in various types of projects which requires getting live quotes f
 # Documentation
 ###### Add dependency from Maven Central https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
-#####Maven
+##### Maven
 ```
 <dependency>
   <groupId>com.webencyclop.core</groupId>
@@ -32,12 +32,12 @@ It can be used in various types of projects which requires getting live quotes f
   <version>0.1.1</version>
 </dependency>
 ```
-#####Graddle
+##### Graddle
 ```
 implementation 'com.webencyclop.core:mftool-java:0.1.1'
 ```
 
-####How to use in Java code:
+#### How to use in Java code:
 ```
 // Return the List of mutual funds which matches keyword "Axis"
 MFTool mfTool = new MFTool();
