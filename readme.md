@@ -29,7 +29,7 @@ It can be used in various types of projects which requires getting live quotes f
 <dependency>
   <groupId>com.webencyclop.core</groupId>
   <artifactId>mftool-java</artifactId>
-  <version>0.1.1</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 ##### Graddle
