@@ -34,7 +34,7 @@ It can be used in various types of projects which requires getting live quotes f
 ```
 ##### Graddle
 ```
-implementation 'com.webencyclop.core:mftool-java:0.1.1'
+implementation 'com.webencyclop.core:mftool-java:1.0.0'
 ```
 
 #### How to use in Java code:
