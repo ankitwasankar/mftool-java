@@ -99,13 +99,7 @@ public class MFTool {
     }
 
     private boolean compareDate(LocalDate date1, LocalDate date2) {
-        if (date1.getYear() != date2.getYear()) {
-            return false;
-        }
-        if (date1.getMonth() != date2.getMonth()) {
-            return false;
-        }
-        return date1.getDayOfMonth() == date2.getDayOfMonth();
+        return date1.equals(date2) || date1.isBefore(date2);
     }
 
 }

@@ -5,12 +5,13 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Data {
+public class Data implements Comparable<Data> {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @JsonDeserialize(using = LocalDateDeserializer.class)
@@ -54,5 +55,14 @@ public class Data {
                 "date=" + date +
                 ", nav=" + nav +
                 '}';
+    }
+
+    @Override
+    public int compareTo(@NotNull Data o) {
+        try {
+            return this.getDate().compareTo(o.getDate());
+        } catch (Exception e) {
+            return 0;
+        }
     }
 }
