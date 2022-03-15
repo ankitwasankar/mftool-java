@@ -71,11 +71,16 @@ public class MFTool {
         if (!schemeDetailMap.containsKey(code)) {
             updateSchemeDetails(code);
         }
-        return schemeNavMap.get(code)
+        List<Data> d = schemeNavMap.get(code)
                 .stream()
                 .filter(data -> compareDate(date, data.getDate()))
-                .collect(Collectors.toList())
-                .get(0).getNav();
+                .sorted()
+                .collect(Collectors.toList());
+        if (!d.isEmpty()) {
+            return d.get(0).getNav();
+        }
+        return new BigDecimal("0");
+
     }
 
     private void updateSchemeDetails(String code) throws IOException {

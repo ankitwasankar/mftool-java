@@ -57,4 +57,10 @@ class MFToolTest {
         BigDecimal nav = tool.getNavFor("120503", LocalDate.parse("2021-07-13"));
         Assertions.assertNotNull(nav);
     }
+    @Test
+    void testGetNavForHoliday() throws IOException {
+        MFTool tool = new MFTool();
+        BigDecimal nav = tool.getNavFor("120711", LocalDate.parse("2021-08-21"));
+        Assertions.assertNotNull(nav);
+    }
 }
