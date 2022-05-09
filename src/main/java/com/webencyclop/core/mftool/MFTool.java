@@ -113,6 +113,6 @@ public class MFTool {
     }
 
     private boolean isSchemeDetailNeedToUpdate(String code) {
-        return !schemeDetailMap.containsKey(code) || LocalDate.now().compareTo(navUpdatedMap.get(code)) != 0;
+        return !schemeDetailMap.containsKey(code) || (navUpdatedMap.get(code) != null && LocalDate.now().compareTo(navUpdatedMap.get(code)) != 0);
     }
 }
