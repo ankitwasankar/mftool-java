@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 class MFToolTest {
@@ -57,6 +56,7 @@ class MFToolTest {
         BigDecimal nav = tool.getNavFor("120503", LocalDate.parse("2021-07-13"));
         Assertions.assertNotNull(nav);
     }
+
     @Test
     void testGetNavForHoliday() throws IOException {
         MFTool tool = new MFTool();

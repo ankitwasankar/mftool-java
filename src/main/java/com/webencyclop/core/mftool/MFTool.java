@@ -23,9 +23,12 @@ public class MFTool {
     private final Map<String, SchemeDetails> schemeDetailMap = new HashMap<>();
     private final Map<String, List<Data>> schemeNavMap = new HashMap<>();
     ObjectMapper mapper = new ObjectMapper();
+    LocalDate dataUpdateDate;
+    Map<String, LocalDate> navUpdatedMap = new HashMap<>();
 
     public List<SchemeNameCodePair> matchingScheme(String searchTerm) throws IOException {
-        if (schemeNameCodePairList.isEmpty()) {
+        if (schemeNameCodePairList.isEmpty() || LocalDate.now().compareTo(dataUpdateDate) != 0) {
+            dataUpdateDate = LocalDate.now();
             updateSchemeNameCodePairList();
         }
         return schemeNameCodePairList
@@ -37,7 +40,8 @@ public class MFTool {
 
 
     public List<SchemeNameCodePair> allSchemes() throws IOException {
-        if (schemeNameCodePairList.isEmpty()) {
+        if (schemeNameCodePairList.isEmpty() || LocalDate.now().compareTo(dataUpdateDate) != 0) {
+            dataUpdateDate = LocalDate.now();
             updateSchemeNameCodePairList();
         }
         return schemeNameCodePairList
@@ -47,28 +51,28 @@ public class MFTool {
     }
 
     public SchemeDetails schemeDetails(String code) throws IOException {
-        if (!schemeDetailMap.containsKey(code)) {
+        if (isSchemeDetailNeedToUpdate(code)) {
             updateSchemeDetails(code);
         }
         return schemeDetailMap.get(code);
     }
 
     public List<Data> historicNavForScheme(String code) throws IOException {
-        if (!schemeDetailMap.containsKey(code)) {
+        if (isSchemeDetailNeedToUpdate(code)) {
             updateSchemeDetails(code);
         }
         return schemeNavMap.get(code);
     }
 
     public BigDecimal getCurrentNav(String code) throws IOException {
-        if (!schemeDetailMap.containsKey(code)) {
+        if (isSchemeDetailNeedToUpdate(code)) {
             updateSchemeDetails(code);
         }
         return schemeNavMap.get(code).get(0).getNav();
     }
 
     public BigDecimal getNavFor(String code, LocalDate date) throws IOException {
-        if (!schemeDetailMap.containsKey(code)) {
+        if (isSchemeDetailNeedToUpdate(code)) {
             updateSchemeDetails(code);
         }
         List<Data> d = schemeNavMap.get(code)
@@ -89,6 +93,7 @@ public class MFTool {
                 .build();
         var response = client.newCall(request).execute();
         var schemeDetails = mapper.readValue(Objects.requireNonNull(response.body()).string(), InputSchemeDetails.class);
+        navUpdatedMap.put(code, LocalDate.now());
         schemeDetailMap.put(code, schemeDetails.mapToSchemeDetail());
         schemeNavMap.put(code, schemeDetails.mapToNav());
     }
@@ -107,4 +112,7 @@ public class MFTool {
         return date1.equals(date2) || date1.isBefore(date2);
     }
 
+    private boolean isSchemeDetailNeedToUpdate(String code) {
+        return !schemeDetailMap.containsKey(code) || LocalDate.now().compareTo(navUpdatedMap.get(code)) != 0;
+    }
 }
