@@ -1,6 +1,10 @@
-![MFtool Java](https://raw.githubusercontent.com/ankitwasankar/mftool-java/master/src/main/resources/icons/mf-tool-java.jpg)
-
-Java library for getting realtime and historic Mutual Funds data in India
+<br/>
+<div align="center">
+  <a href="https://github.com/ankitwasankar/mftool-java">
+    <img src="https://raw.githubusercontent.com/ankitwasankar/mftool-java/master/src/main/resources/icons/mf-tool-java.jpg" alt="Logo" width="250">
+  </a>
+</div>
+<br />
 
 [![Build Status](https://travis-ci.com/ankitwasankar/mftool-java.svg?branch=master)](https://travis-ci.com/github/ankitwasankar/mftool-java)
 ![MIT Licence](https://camo.githubusercontent.com/8298ac0a88a52618cd97ba4cba6f34f63dd224a22031f283b0fec41a892c82cf/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f73656c656e69756d2d776972652e737667)
