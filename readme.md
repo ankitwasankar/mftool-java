@@ -1,7 +1,7 @@
 <br/>
 <div align="center">
   <a href="https://github.com/ankitwasankar/mftool-java">
-    <img src="https://raw.githubusercontent.com/ankitwasankar/mftool-java/master/src/main/resources/icons/mf-tool-java.jpg" alt="Logo" width="250">
+    <img src="https://raw.githubusercontent.com/ankitwasankar/mftool-java/master/src/main/resources/icons/mf-tool-java.jpg" alt="Logo" width="200">
   </a>
 </div>
 <br />
