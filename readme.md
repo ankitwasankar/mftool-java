@@ -6,7 +6,9 @@
 <p align="center">
 <a href="https://search.maven.org/artifact/com.webencyclop.core/mftool-java"><img src="https://img.shields.io/maven-central/v/com.webencyclop.core/mftool-java.svg?label=Maven%20Central"/></a> 
 <a href="https://travis-ci.com/github/ankitwasankar/mftool-java"><img src="https://travis-ci.com/ankitwasankar/mftool-java.svg?branch=master" /></a>
-<a href="https://github.com/ankitwasankar/mftool-java/blob/master/license.md"><img src="https://camo.githubusercontent.com/8298ac0a88a52618cd97ba4cba6f34f63dd224a22031f283b0fec41a892c82cf/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f73656c656e69756d2d776972652e737667" /></a>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+<a href="https://github.com/ankitwasankar/mftool-java/blob/master/license.md"><img src="https://camo.githubusercontent.com/80a1153c429992993a5fc1d8009c2f9ed74f95263366dc21a2daec8fb25077c9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646570656e64656e636965732d7570253230746f253230646174652d627269676874677265656e2e737667" /></a>
+<a href="https://www.linkedin.com/in/ankitwasankar/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 </p>
 <p align="center">
   This repository contains the <strong>MF TOOL - JAVA</strong> source code.
