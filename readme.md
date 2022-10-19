@@ -13,7 +13,7 @@
   This repository contains the <strong>MF TOOL - JAVA</strong> source code.
   MF TOOL - JAVA is a java library developed to ease the process of working with Indian Mutual Funds. It's a powerful, actively maintained and easy to use java library.
 </p>
-<hr/>
+
 <p align="center">
 <a href="#introduction">Introduction</a> &nbsp;&nbsp;&nbsp;
 <a href="#installation">Installation</a> &nbsp;&nbsp;&nbsp;
