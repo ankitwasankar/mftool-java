@@ -1,18 +1,20 @@
-<br/>
-<div align="center">
+<h1 align="center">
   <a href="https://github.com/ankitwasankar/mftool-java">
     <img src="https://raw.githubusercontent.com/ankitwasankar/mftool-java/master/src/main/resources/icons/mf-tool-java-new.jpg" alt="mftool-java">
   </a>
-</div>
+</h1>
 <br />
-
-&nbsp;[![Maven Central](https://img.shields.io/maven-central/v/com.webencyclop.core/mftool-java.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.webencyclop.core/mftool-java)
-[![Build Status](https://travis-ci.com/ankitwasankar/mftool-java.svg?branch=master)](https://travis-ci.com/github/ankitwasankar/mftool-java)
-[![MIT Licence](https://camo.githubusercontent.com/8298ac0a88a52618cd97ba4cba6f34f63dd224a22031f283b0fec41a892c82cf/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f73656c656e69756d2d776972652e737667)](https://github.com/ankitwasankar/mftool-java/blob/master/license.md)
-<hr/>
+<p align="center">
+<a href="https://search.maven.org/artifact/com.webencyclop.core/mftool-java"><img src="https://img.shields.io/maven-central/v/com.webencyclop.core/mftool-java.svg?label=Maven%20Central"/></a> 
+<a href="https://travis-ci.com/github/ankitwasankar/mftool-java"><img src="https://travis-ci.com/ankitwasankar/mftool-java.svg?branch=master" /></a>
+<a href="https://github.com/ankitwasankar/mftool-java/blob/master/license.md"><img src="https://camo.githubusercontent.com/8298ac0a88a52618cd97ba4cba6f34f63dd224a22031f283b0fec41a892c82cf/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f73656c656e69756d2d776972652e737667" /></a>
+</p>
+<p align="center">
+  This repository contains the <strong>MF TOOL - JAVA</strong> source code.
+  MF TOOL - JAVA is a java library developed to ease the process of working with Indian Mutual Funds. It's a powerful, actively maintained and easy to use java library.
+</p>
 
 #Introduction
-
 mftool-java is a library for getting Mutual Funds data in India in Java applications. 
 It can be used in various types of projects which requires getting live quotes for a given scheme.
 
