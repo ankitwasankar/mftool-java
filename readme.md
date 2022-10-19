@@ -6,9 +6,10 @@
 </div>
 <br />
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.webencyclop.core/mftool-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.webencyclop.core%22%20AND%20a:%22mftool-java%22)
 [![Build Status](https://travis-ci.com/ankitwasankar/mftool-java.svg?branch=master)](https://travis-ci.com/github/ankitwasankar/mftool-java)
 ![MIT Licence](https://camo.githubusercontent.com/8298ac0a88a52618cd97ba4cba6f34f63dd224a22031f283b0fec41a892c82cf/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f73656c656e69756d2d776972652e737667)
-
+<hr/>
 # Introduction
 
 mftool-java is a library for getting Mutual Funds data in India in Java applications. 
