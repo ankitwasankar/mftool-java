@@ -51,7 +51,7 @@ tool.getCurrentNav("120503");  //-- get current nav
 ```
 # Documentation
 Multiple methods provide way to work with mutual funds and related data, here we can see each of the methods in details.
-#### 1. How to initialize MFTool object
+### 1. How to initialize MFTool object
 ```
 MFTool tool = new MFTool();
 ```
@@ -82,7 +82,7 @@ public class MyService {
 }
 ```
 
-#### 2. How to fetch list of all Mutual Fund Schemes
+### 2. How to fetch list of all Mutual Fund Schemes
 ```
 @Service
 public class MyService {
@@ -96,12 +96,76 @@ public class MyService {
 }
 ```
 
-#### 3. How to fetch list of all Schemes matching keyword
+### 3. How to fetch list of all Schemes matching keyword
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
 
-#### 4. Current NAV for the mutual fund scheme
+    public List<SchemeNameCodePair> getCurrentNav(String schemeCode) {
+        List<SchemeNameCodePair> list = tool.matchingScheme("Axis"); 
+        // This will fetch MF schemes which has "Axis" in it's name.
+    }
+}
+```
 
-#### 5. NAV on specific date for the scheme
+### 4. Current NAV for the mutual fund scheme
+Here eg., schemeCode for Axis Long Term Equity Fund - Direct Plan - Growth Option is 120503.<br/>
+When we fetch list of mutual funds, we get the scheme-name, and it's corresponding schemeCode.
+<b>Scheme Code uniquely identifies the mutual fund scheme.</b>
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
 
-#### 6. List of historic NAV for the scheme
+    public List<SchemeNameCodePair> fetchListSchemes(String schemeCode) {
+        BigDecimal nav = tool.getCurrentNav(schemeCode);
+    }
+}
+```
 
+### 5. NAV on specific date for the scheme
+Here, LocalDate is used to define the date,
+``LocalDate date = LocalDate.parse("2021-07-13");``
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
+
+    public List<SchemeNameCodePair> getNavOnDate(String schemeCode, LocalDate date) {
+        BigDecimal nav = tool.getNavFor("120503", date);
+    }
+}
+```
+
+### 6. List of historic NAV for the scheme
+This method provide list of all the NAVs for the given scheme.
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
+
+    public List<SchemeNameCodePair> getNavOnDate(String schemeCode) {
+        List<Data> list = tool.historicNavForScheme(schemeCode);
+    }
+}
+```
+
+
+# Issue?
+This repository is maintained actively, so if you face any issue please raise the issue and we will try to fix it as soon as possible.
+https://github.com/ankitwasankar/mftool-java/issues
+
+#### Liked our work ?
+Put a star to our repository. :-)
+
+ 
 
