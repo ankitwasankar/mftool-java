@@ -1,0 +1,4 @@
+Deployment passphrase is at:
+C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3\conf\settings.xml
+
+at last line
