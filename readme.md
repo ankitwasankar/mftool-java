@@ -19,6 +19,7 @@
 <a href="#installation">Installation</a> &nbsp;&nbsp;&nbsp;
 <a href="#usage">Usage</a> &nbsp;&nbsp;&nbsp;
 <a href="#documentation">Documentation</a> &nbsp;&nbsp;&nbsp;
+<a href="#issue">Issue?</a> &nbsp;&nbsp;&nbsp;
 </p>
 
 # Introduction
@@ -170,7 +171,7 @@ public class MyService {
 This repository is maintained actively, so if you face any issue please raise the issue, and will try to fix it as soon as possible.
 https://github.com/ankitwasankar/mftool-java/issues
 
-#### Liked our work ?
+#### Liked the work ?
 Put a star to the repository. :-)
 
  
