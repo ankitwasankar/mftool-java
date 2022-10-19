@@ -16,23 +16,15 @@
 <hr/>
 
 # Introduction
-mftool-java is a library for getting Mutual Funds data in India in Java applications. 
-It can be used in various types of projects which requires getting live quotes for a given scheme.
+This <b>mf-tool java</b> library provides simple apis/functions/methods to work with Indian Mutual Funds. You can,
 
-###### Note: This library requires internet connection to fetch Mutual Fund data.
+- Fetch list of all the mutual fund schemes.
+- Fetch list of matching mutual fund schemes based on provided keywords.
+- Fetch historic or current NAV for the fund.
+- Fetch Fund Details for fund and fund house.
+- You can integrate this with any Java projects.
 
-# Features
-- Fetch list of all the mutual fund schemes with their scheme-codes.
-- Match keyword with names of mutual fund list. (useful in auto-suggestion in searches).
-- Fetch historic NAV for the fund.
-- Fetch current NAV.
-- Fetch NAV for specific date.
-- Fetch Fund Details for fund.
-- Returns data in Java Objects.
-
-# Documentation
-###### Add dependency from Maven Central https://search.maven.org/artifact/com.webencyclop.core/mftool-java
-
+# Installation
 ##### Maven
 ```
 <dependency>
@@ -45,31 +37,30 @@ It can be used in various types of projects which requires getting live quotes f
 ```
 implementation 'com.webencyclop.core:mftool-java:1.0.4'
 ```
+For other dependency management tool, please visit
+https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
-#### How to use in Java code:
+
+# Usage
+Sample code on how to use the library. <br/>
+There are many methods available apart from below sample code, please scroll down to check the documentation.
 ```
-// Return the List of mutual funds which matches keyword "Axis"
-MFTool mfTool = new MFTool();
-List<SchemeNameCodePair> list = mfTool.matchingScheme("Axis");
-
-// Retuns List of all the mutual fund list in India
 MFTool tool = new MFTool();
-List<SchemeNameCodePair> list = tool.allSchemes();
-
-// Retuns the Mutual Fund details - Axis fund: 120503
-MFTool tool = new MFTool();
-SchemeDetails details = tool.schemeDetails("120503");
-
-// Returns hisoric NAV data - Axis fund: 120503
-MFTool tool = new MFTool();
-List<Data> list = tool.historicNavForScheme("120503");
-
-// Returns current NAV for mutual fund
-MFTool tool = new MFTool();
-BigDecimal nav = tool.getCurrentNav("120503");
-
-// Returns NAV for specific date
-MFTool tool = new MFTool();
-BigDecimal nav = tool.getNavFor("120503", LocalDate.parse("2021-07-13"));
+tool.matchingScheme("Axis");   //-- get list of all schemes with Axis in it's name
+tool.getCurrentNav("120503");  //-- get current nav
 ```
+# Documentation
+Multiple methods provide way to work with mutual funds and related data, here we can see each of the methods in details.
+#### 1. How to initialize MFTool object
+
+#### 2. How to fetch list of all Mutual Fund Schemes
+
+#### 3. How to fetch list of all Schemes matching keyword
+
+#### 4. Current NAV for the mutual fund scheme
+
+#### 5. NAV on specific date for the scheme
+
+#### 6. List of historic NAV for the scheme
+
 
