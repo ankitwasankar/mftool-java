@@ -161,11 +161,11 @@ public class MyService {
 
 
 # Issue?
-This repository is maintained actively, so if you face any issue please raise the issue and we will try to fix it as soon as possible.
+This repository is maintained actively, so if you face any issue please raise the issue, and will try to fix it as soon as possible.
 https://github.com/ankitwasankar/mftool-java/issues
 
 #### Liked our work ?
-Put a star to our repository. :-)
+Put a star to the repository. :-)
 
  
 
