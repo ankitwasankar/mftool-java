@@ -52,8 +52,49 @@ tool.getCurrentNav("120503");  //-- get current nav
 # Documentation
 Multiple methods provide way to work with mutual funds and related data, here we can see each of the methods in details.
 #### 1. How to initialize MFTool object
+```
+MFTool tool = new MFTool();
+```
+This will create the object for you, but it's recommended that you should create this object as <b>singleton</b> object.
+The object uses caching mechanism, which under-the-hood caches the values of historic nav and other static information to improve the performance. 
+<br/>If you are using the Spring project, you can create the bean in ``@Configuration`` configuration class.
+```
+@Configuration
+public class MFToolConfig{
+    @Bean
+    public MFTool initializeMfTool() {
+        MFTool tool = new MFTool();
+        return tool;
+    }
+}
+```
+You can use MFTool in other services using ``@Inject`` or ``@autowired`` annotation.
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
+
+    public void getCurrentNav(String scheme) {
+        BigDecimal nav = tool.getCurrentNav(scheme);
+    }
+}
+```
 
 #### 2. How to fetch list of all Mutual Fund Schemes
+```
+@Service
+public class MyService {
+    
+    @Autowired
+    private MFTool tool;
+
+    public List<SchemeNameCodePair> fetchListOfAllMutualFundSchemes() {
+        List<SchemeNameCodePair> list = tool.allSchemes();
+    }
+}
+```
 
 #### 3. How to fetch list of all Schemes matching keyword
 
