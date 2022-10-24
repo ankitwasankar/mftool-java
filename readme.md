@@ -49,7 +49,7 @@ https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
 
 # Usage
-Sample code on how to use the library:<br/>
+Sample code that shows how to use the library:<br/>
 ```
 MFTool tool = new MFTool();
 tool.matchingScheme("Axis");   //-- get a list of all schemes with Axis in its name
