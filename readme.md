@@ -11,25 +11,25 @@
 </p>
 <p align="center">
   This repository contains the <strong>MF TOOL - JAVA</strong> source code.
-  MF TOOL - JAVA is a java library developed to ease the process of working with Indian Mutual Funds. It's a powerful, actively maintained and easy to use java library.
+  MF TOOL - JAVA is a Java library developed to ease the process of working with Indian Mutual Funds. It's powerful, actively maintained and easy to use.
 </p>
 
 <p align="center">
-<a href="#introduction">Introduction</a> &nbsp;&nbsp;&nbsp;
-<a href="#installation">Installation</a> &nbsp;&nbsp;&nbsp;
-<a href="#usage">Usage</a> &nbsp;&nbsp;&nbsp;
-<a href="#documentation">Documentation</a> &nbsp;&nbsp;&nbsp;
-<a href="#issue">Issue?</a> &nbsp;&nbsp;&nbsp;
+<a href="#introduction">Introduction</a> &nbsp;&bull;&nbsp;
+<a href="#installation">Installation</a> &nbsp;&bull;&nbsp;
+<a href="#usage">Usage</a> &nbsp;&bull;&nbsp;
+<a href="#documentation">Documentation</a> &nbsp;&bull;&nbsp;
+<a href="#issue">Issue?</a>
 </p>
 
 # Introduction
-This <b>mf-tool java</b> library provides simple apis/functions/methods to work with Indian Mutual Funds. You can,
+This <b>mf-tool java</b> library provides simple APIs/functions/methods to work with Indian Mutual Funds. You can:
 
-- Fetch list of all the mutual fund schemes.
-- Fetch list of matching mutual fund schemes based on provided keywords.
-- Fetch historic or current NAV for the fund.
-- Fetch Fund Details for fund and fund house.
-- You can integrate this with any Java projects.
+- Fetch a list of all mutual fund schemes.
+- Fetch a list of matching mutual fund schemes based on provided keywords.
+- Fetch historic or current NAV (Net Asset Value) for a fund.
+- Fetch details for a fund and fund house.
+- Integrate this with any Java project.
 
 # Installation
 ##### Maven
@@ -49,21 +49,23 @@ https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
 
 # Usage
-Sample code on how to use the library. <br/>
-There are many methods available apart from below sample code, please scroll down to check the documentation.
+Sample code that shows how to use the library:<br/>
 ```
 MFTool tool = new MFTool();
-tool.matchingScheme("Axis");   //-- get list of all schemes with Axis in it's name
+tool.matchingScheme("Axis");   //-- get a list of all schemes with Axis in its name
 tool.getCurrentNav("120503");  //-- get current nav
 ```
+The other available methods are described in the next section.
+
 # Documentation
-Multiple methods provide way to work with mutual funds and related data, here we can see each of the methods in details.
-### 1. How to initialize MFTool object
+Multiple methods provide ways to work with mutual funds and related data. Those are listed below in detail.
+
+### 1. How to initialize an MFTool object
 ```
 MFTool tool = new MFTool();
 ```
-This will create the object for you, but it's recommended that you should create this object as <b>singleton</b> object.
-The object uses caching mechanism, which under-the-hood caches the values of historic nav and other static information to improve the performance. 
+This will create the object for you, but it's recommended that you create this object as a <b>singleton</b> object.
+The object uses a caching mechanism, which under-the-hood caches the values of historic nav and other static information to improve the performance. 
 <br/>If you are using the Spring project, you can create the bean in ``@Configuration`` configuration class.
 ```
 @Configuration
@@ -89,7 +91,7 @@ public class MyService {
 }
 ```
 
-### 2. How to fetch list of all Mutual Fund Schemes
+### 2. How to fetch a list of all mutual fund schemes
 ```
 @Service
 public class MyService {
@@ -103,7 +105,7 @@ public class MyService {
 }
 ```
 
-### 3. How to fetch list of all Schemes matching keyword
+### 3. How to fetch a list of all schemes matching a keyword
 ```
 @Service
 public class MyService {
@@ -113,15 +115,15 @@ public class MyService {
 
     public List<SchemeNameCodePair> getCurrentNav(String schemeCode) {
         List<SchemeNameCodePair> list = tool.matchingScheme("Axis"); 
-        // This will fetch MF schemes which has "Axis" in it's name.
+        // This will fetch MF schemes that have "Axis" in the name.
     }
 }
 ```
 
 ### 4. Current NAV for the mutual fund scheme
-Here eg., schemeCode for Axis Long Term Equity Fund - Direct Plan - Growth Option is 120503.<br/>
-When we fetch list of mutual funds, we get the scheme-name, and it's corresponding schemeCode.
-<b>Scheme Code uniquely identifies the mutual fund scheme.</b>
+An example schemeCode is 120503 (_Axis Long Term Equity Fund - Direct Plan - Growth Option_).<br/>
+When we fetch a list of mutual funds, we get the scheme-name, and its corresponding schemeCode.<br/>
+<b>A scheme code uniquely identifies the mutual fund scheme.</b>
 ```
 @Service
 public class MyService {
@@ -136,7 +138,7 @@ public class MyService {
 ```
 
 ### 5. NAV on specific date for the scheme
-Here, LocalDate is used to define the date,
+LocalDate is used to define the date. For example:<br/>
 ``LocalDate date = LocalDate.parse("2021-07-13");``
 ```
 @Service
@@ -152,7 +154,7 @@ public class MyService {
 ```
 
 ### 6. List of historic NAV for the scheme
-This method provide list of all the NAVs for the given scheme.
+This method provides a list of all the NAVs for the given scheme.
 ```
 @Service
 public class MyService {
@@ -168,10 +170,7 @@ public class MyService {
 
 
 # Issue?
-This repository is maintained actively, so if you face any issue please raise the issue, and will try to fix it as soon as possible.
-https://github.com/ankitwasankar/mftool-java/issues
+This repository is maintained actively, so if you face any issue please <a href="https://github.com/ankitwasankar/mftool-java/issues/new">raise an issue</a>.
 
-#### Liked the work ?
-Put a star to the repository. :-)
-
- 
+#### Liked the work?
+Give the repository a star :-)
