@@ -46,7 +46,7 @@ This <b>mf-tool java</b> library provides simple APIs/functions/methods to work 
 implementation 'com.webencyclop.core:mftool-java:1.0.4'
 ```
 For other dependency management tool, please visit
-https://search.maven.org/artifact/com.webencyclop.core/mftool-java
+<a href="https://search.maven.org/artifact/com.webencyclop.core/mftool-java">https://search.maven.org/artifact/com.webencyclop.core/mftool-java</a>
 
 
 ## Usage
