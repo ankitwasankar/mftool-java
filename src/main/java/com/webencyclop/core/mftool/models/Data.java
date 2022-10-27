@@ -50,14 +50,6 @@ public class Data implements Comparable<Data> {
     }
 
     @Override
-    public String toString() {
-        return "Data{" +
-                "date=" + date +
-                ", nav=" + nav +
-                '}';
-    }
-
-    @Override
     public int compareTo(@NotNull Data o) {
         try {
             return this.getDate().compareTo(o.getDate());

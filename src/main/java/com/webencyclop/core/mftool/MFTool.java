@@ -112,7 +112,7 @@ public class MFTool {
         return date1.equals(date2) || date1.isBefore(date2);
     }
 
-    private boolean isSchemeDetailNeedToUpdate(String code) {
+    public boolean isSchemeDetailNeedToUpdate(String code) {
         return !schemeDetailMap.containsKey(code) || (navUpdatedMap.get(code) != null && LocalDate.now().compareTo(navUpdatedMap.get(code)) != 0);
     }
 }

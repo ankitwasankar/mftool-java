@@ -70,14 +70,4 @@ public class Meta {
         return Objects.hash(schemeCode);
     }
 
-    @Override
-    public String toString() {
-        return "Meta{" +
-                "fundHouse='" + fundHouse + '\'' +
-                ", schemeType='" + schemeType + '\'' +
-                ", schemeCategory='" + schemeCategory + '\'' +
-                ", schemeCode='" + schemeCode + '\'' +
-                ", schemeName='" + schemeName + '\'' +
-                '}';
-    }
 }
