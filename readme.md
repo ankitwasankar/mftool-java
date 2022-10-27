@@ -31,7 +31,7 @@ This <b>mf-tool java</b> library provides simple APIs/functions/methods to work 
 - Fetch details for a fund and fund house.
 - Integrate this with any Java project.
 
-# Installation
+## Installation
 ##### Maven
 ```
 <dependency>
@@ -48,7 +48,7 @@ For other dependency management tool, please visit
 https://search.maven.org/artifact/com.webencyclop.core/mftool-java
 
 
-# Usage
+## Usage
 Sample code that shows how to use the library:<br/>
 ```
 MFTool tool = new MFTool();
@@ -57,7 +57,7 @@ tool.getCurrentNav("120503");  //-- get current nav
 ```
 The other available methods are described in the next section.
 
-# Documentation
+## Documentation
 Multiple methods provide ways to work with mutual funds and related data. Those are listed below in detail.
 
 ### 1. How to initialize an MFTool object
@@ -169,8 +169,8 @@ public class MyService {
 ```
 
 
-# Issue?
+## Issue
 This repository is maintained actively, so if you face any issue please <a href="https://github.com/ankitwasankar/mftool-java/issues/new">raise an issue</a>.
 
-#### Liked the work?
+<h4>Liked the work ?</h4>
 Give the repository a star :-)

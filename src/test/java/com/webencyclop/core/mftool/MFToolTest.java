@@ -22,7 +22,7 @@ class MFToolTest{
     private static MFTool tool;
 
     @BeforeAll
-    private static void init() {
+    public static void init() {
         tool = Mockito.spy(new MFTool());
         when(tool.isSchemeDetailNeedToUpdate("120503")).thenReturn(true);
     }
