@@ -11,7 +11,7 @@
 # For more information on Codacy Analysis CLI in general, see
 # https://github.com/codacy/codacy-analysis-cli.
 
-name: Codacy Security Scan
+name: Codacy Security & Coverage
 
 on:
   push:
@@ -62,5 +62,5 @@ jobs:
           
       # Generate & upload the code coverage
       - name: Generate & upload code coverage
-        run: mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=${{ secrets.CODACY_PROJECT_TOKEN }}  -DapiToken=${{ secrets.CODACY_API_TOKEN }}
+        run: mvn test com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=${{ secrets.CODACY_PROJECT_TOKEN }}  -DapiToken=${{ secrets.CODACY_API_TOKEN }}
 
