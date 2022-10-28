@@ -59,6 +59,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
+          
       # Generate & upload the code coverage
       - name: Generate & upload code coverage
         run: mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=${{ secrets.CODACY_PROJECT_TOKEN }}  -DapiToken=${{ secrets.CODACY_API_TOKEN }}
+
