@@ -1,4 +1,0 @@
-language: java
-sudo: false
-script:
-  - mvn -DperformRelease=false clean verify
