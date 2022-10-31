@@ -27,7 +27,7 @@ public class MFTool {
     Map<String, LocalDate> navUpdatedMap = new HashMap<>();
 
     public List<SchemeNameCodePair> matchingScheme(String searchTerm) throws IOException {
-        if (schemeNameCodePairList.isEmpty() || LocalDate.now().compareTo(dataUpdateDate) != 0) {
+        if (isSchemePairNeedToUpdate()) {
             dataUpdateDate = LocalDate.now();
             updateSchemeNameCodePairList();
         }
@@ -40,7 +40,7 @@ public class MFTool {
 
 
     public List<SchemeNameCodePair> allSchemes() throws IOException {
-        if (schemeNameCodePairList.isEmpty() || LocalDate.now().compareTo(dataUpdateDate) != 0) {
+        if (isSchemePairNeedToUpdate()) {
             dataUpdateDate = LocalDate.now();
             updateSchemeNameCodePairList();
         }
@@ -114,5 +114,9 @@ public class MFTool {
 
     public boolean isSchemeDetailNeedToUpdate(String code) {
         return !schemeDetailMap.containsKey(code) || (navUpdatedMap.get(code) != null && LocalDate.now().compareTo(navUpdatedMap.get(code)) != 0);
+    }
+
+    public boolean isSchemePairNeedToUpdate() {
+        return schemeNameCodePairList.isEmpty() || LocalDate.now().compareTo(dataUpdateDate) != 0;
     }
 }
